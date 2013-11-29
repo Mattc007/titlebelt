@@ -25,7 +25,7 @@
 09/04/2010 California-Davis             3  California                  52 
 09/04/2010 Cincinnati                  14  Fresno State                28 
 09/04/2010 Coastal Carolina             0  West Virginia               31 
-09/04/2010 Colorado State               3  Colorado                    24 @ Denver, CO
+	
 09/04/2010 Connecticut                 10  Michigan                    30 
 09/04/2010 Eastern Illinois             7  Iowa                        37 
 09/04/2010 Elon                        27  Duke                        41 
