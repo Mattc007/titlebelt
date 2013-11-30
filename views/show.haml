@@ -1,5 +1,13 @@
 %h1= @title
 
-/ if @results
-/   @results.each do |result|
-/     %p= result
+%table{:class => 'table table-condensed'}
+  %thead
+    %th= 'Team'
+    %th= 'Streak'
+    %th= 'End'
+  %tbody
+    - @results.each do |result|
+      %tr
+        %td= result[0]
+        %td= result[1]
+        %td= result[2]

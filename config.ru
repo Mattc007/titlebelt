@@ -2,6 +2,7 @@ require 'rubygems'
 require 'bundler/setup'
 require 'sinatra'
 require 'haml'
+require 'pry'
 require './app/titlebelt'
 
 set :environment, :development

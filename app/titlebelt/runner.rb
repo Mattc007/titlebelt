@@ -17,8 +17,6 @@ module TitleBelt
           end
         end
 
-
-
         raise 'team not found' unless date
 
         data.each do |game|
@@ -34,12 +32,9 @@ module TitleBelt
           end
         end
 
-        puts "Streak - Team"
-        results.each do |result|
-          puts "#{result[0]} (#{result[1]}) - #{result[2]}"
-        end
+        results[-1] = [winner, streak, nil]
 
-        return nil
+        return results
       end
     end
   end

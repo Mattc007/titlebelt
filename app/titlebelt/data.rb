@@ -1,7 +1,6 @@
 module TitleBelt
   class Data
     require 'open-uri'
-    require 'csv'
 
     class << self
 
@@ -10,13 +9,14 @@ module TitleBelt
 
         (1869..2011).each do |year|
           begin
-            open("../data/#{year}.txt", 'wb') do |file|
+            open("app/titlebelt/data/#{year}.txt", 'wb') do |file|
               puts "getting #{year}..."
               file << open("#{url}cf#{year}gms.txt").read
               puts "done!"
             end
-          rescue
+          rescue Exception => e
             puts "could not get a file for the year #{year}"
+            puts e.message
           end
         end
       end
@@ -24,11 +24,11 @@ module TitleBelt
       def process(start_year = 1971)
         results = [] # [ [day, winner, loser], * ]
 
-        epoch_date = Date.new(start_year,1,1)
+        epoch_date = Date.new(start_year.to_i,1,1)
 
         (1869...2011).each do |year|
           begin
-            open("../data/#{year}.txt") do |file|
+            open("app/titlebelt/data/#{year}.txt") do |file|
               file.each do |row|
                 if row.gsub(/\s/,'').length > 1
                   row.squeeze!(' ').gsub!(/\s[@].+/,'')
