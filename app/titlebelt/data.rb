@@ -21,7 +21,7 @@ module TitleBelt
         end
       end
 
-      def process(start_year = 1971)
+      def game_results(start_year = 1869)
         results = [] # [ [day, winner, loser], * ]
 
         epoch_date = Date.new(start_year.to_i,1,1)
@@ -58,10 +58,12 @@ module TitleBelt
             end
           rescue Exception => e
             puts "#{e.message}"
+            raise e
           end
         end
         results
       end
+
     end
   end
 end

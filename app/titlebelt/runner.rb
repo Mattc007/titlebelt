@@ -3,7 +3,7 @@ module TitleBelt
   
     class << self
       def analyze(team = 'Nebraska', start_year = 1971)
-        data = Data.process(start_year)
+        data = Data.game_results(start_year)
         date, winner = nil, nil
 
         results = [team]
